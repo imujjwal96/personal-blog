@@ -1,0 +1,25 @@
+mixin blogpostList(posts, level)
+  each post in posts
+    +blogpost(post.title, post.date, post.author, post.categories, level, post.slug)
+      p!= post.plot
+      .read-more
+        a(href='post/' + post.slug) Read more
+
+mixin blogpost(title, date, author, postCategories, level, postSlug)
+  article.blog-post
+    .blog-post-body
+      if level == 2
+        h2
+          a(href='post/' + postSlug) #{title}
+      else
+        h2 #{title}
+      .post-meta
+        span
+          | by &nbsp;
+          a(href='#') <a href="#{author.website}" target="_blank">#{author.name}</a>
+        | |
+        span
+          i.fa.fa-clock-o
+          | #{date}
+      if block
+        block

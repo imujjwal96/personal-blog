@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    .container
+        header
+            a(href='/')
+            img(src='images/logo2.png', style='max-width:325px')
+        .col-md-10
+            +blogpostList(posts, 2)
+

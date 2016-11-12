@@ -1,0 +1,17 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+    .container
+        .navbar-header
+            button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+        #navbar.collapse.navbar-collapse
+            ul.nav.navbar-nav.navbar-right
+                li(class=title == 'Home' ? 'active' : undefined)
+                    a(href='/') Home
+                li(class=title == 'All Articles' ? 'active' : undefined)
+                    a(href='/articles') All Articles
+                if isLoggedin
+                    li
+                        a(href='/editors/logout') Logout

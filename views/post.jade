@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container
+    header
+    section
+      .row
+        .col-md-10
+          +blogpost(title, date, author, categories)
+            if featuredImage
+              div.featured
+                img(src=featuredImage.file.url, title=featuredImage.title)
+            section!= body
