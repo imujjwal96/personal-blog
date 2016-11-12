@@ -1,11 +1,11 @@
 mixin blogpostList(posts, level)
   each post in posts
-    +blogpost(post.title, post.date, post.author, post.categories, level, post.slug)
+    +blogpost(post.title, post.date, post.author, post.categories, level, post.slug, post.read)
       p!= post.plot
       .read-more
         a(href='post/' + post.slug) Read more
 
-mixin blogpost(title, date, author, postCategories, level, postSlug)
+mixin blogpost(title, date, author, postCategories, level, postSlug, postRead)
   article.blog-post
     .blog-post-body
       if level == 2
@@ -19,6 +19,6 @@ mixin blogpost(title, date, author, postCategories, level, postSlug)
           | #{date}
         | |
         span
-          | XX minute read
+          | #{postRead} minute read
       if block
         block

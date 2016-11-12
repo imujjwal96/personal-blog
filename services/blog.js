@@ -93,7 +93,8 @@ module.exports.formatPosts_ = function (posts) {
             author: {
                 name: post.fields.author[0].fields.name,
                 website: post.fields.author[0].fields.website
-            }
+            },
+            read: (post.fields.body.split(" ").length / 250)
         });
     }
     return result;
@@ -109,6 +110,7 @@ module.exports.formatPost_ = function (post) {
         author: {
             name: post.fields.author[0].fields.name,
             website: post.fields.author[0].fields.website
-        }
+        },
+        read: (post.fields.body.split(" ").length / 250)
     };
 };
