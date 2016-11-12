@@ -15,11 +15,10 @@ mixin blogpost(title, date, author, postCategories, level, postSlug)
         h2 #{title}
       .post-meta
         span
-          | by &nbsp;
-          a(href='#') <a href="#{author.website}" target="_blank">#{author.name}</a>
-        | |
-        span
           i.fa.fa-clock-o
           | #{date}
+        | |
+        span
+          | XX minute read
       if block
         block

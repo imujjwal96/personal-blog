@@ -1,17 +1,18 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lora:400|Raleway:100,200,300,400,500,700,800);
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
 body {
   font-family: "Raleway", Sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 .navbar-inverse {
-  background-color: #060B2A;
-  border-color: #111636;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
-  color: #fff;
-  background-color: #111636;
+  color: #000000;
+  background-color: #ffffff;
 }
 .spacer {
   margin-top: 40px;
@@ -185,10 +186,10 @@ section:last-child {
   }
   .blog-post .post-meta {
     margin: 5px 0 20px;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     color: #B1B1B1;
-    font-family: "Lora";
+    font-family: 'Indie Flower', cursive;
   }
   .blog-post .post-meta a {
     color: #B1B1B1;

@@ -20,7 +20,8 @@ html
     link(rel='stylesheet', href='/stylesheets/form.css')
 
   body
-    include includes/header
+    if title
+      include includes/header
     block content
     include includes/footer
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
