@@ -87,7 +87,7 @@ module.exports.formatPosts_ = function (posts) {
             title: post.fields.title,
             slug: post.fields.slug,
             featuredImage: post.fields.featuredImage ? post.fields.featuredImage.fields : null,
-            plot: post.fields.body.substr(0, 150) + '...',
+            plot: post.fields.body.substr(0, 250) + '...',
             date: dateFormat(post.fields.date, 'fullDate'),
             categories: post.fields.category,
             author: {

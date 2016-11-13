@@ -12,7 +12,7 @@ mixin blogpost(title, date, author, postCategories, level, postSlug, postRead)
         h2
           a(href='post/' + postSlug) #{title}
       else
-        h2 #{title}
+        h2(style='color: #009ee3') #{title}
       .post-meta
         span
           i.fa.fa-clock-o
