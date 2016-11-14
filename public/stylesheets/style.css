@@ -86,6 +86,10 @@ h3 {
   text-align: left;
   text-decoration: underline;
 }
+
+h4 {
+  text-align: left;
+}
 p {
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
@@ -212,8 +216,16 @@ section:last-child {
     border-bottom: none;
   }
   .blog-post .blog-post-body {
-    text-align: center;
+    text-align: left;
     padding: 20px 0;
+  }
+
+  .blog-post .blog-post-body h2 {
+    text-align: center;
+  }
+
+  .blog-post .blog-post-body .post-meta {
+    text-align: center;
   }
   .blog-post .blog-post-body h2 {
     margin: 0;
@@ -223,7 +235,7 @@ section:last-child {
   }
   .blog-post .blog-post-body p {
     text-align: justify;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 30px;
     color: #000;
