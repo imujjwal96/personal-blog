@@ -4,7 +4,25 @@ block content
     .container-fluid
         header
             a(href='/')
-            img(src='/images/logo2.png', style='max-width:325px')
+                img(src='/images/logo2.png', style='max-width:325px')
+            .container
+                .row
+                    .col-md-6.col-md-offset-3
+                        |   Student | Open Source Developer
+                    .col-md-6.col-md-offset-3(style='margin-top:10px')
+                        a(href='https://imujjwal96.github.io/ujjwalbhardwaj-resume30102016.pdf', class='resume', target='_blank') About Me
+                        a(href='https://imujjwal96.github.io/ujjwalbhardwaj-resume30102016.pdf', class='resume', target='_blank') Resume
+                    .col-md-6.col-md-offset-3.header-socials(style='margin-top:10px')
+                        a(href='https://plus.google.com/+UjjwalBhardwaj96', target='_blank')
+                            i.fa.fa-envelope
+                        a(href='https://www.facebook.com/imujjwal96', target='_blank')
+                            i.fa.fa-facebook
+                        a(href='https://in.linkedin.com/in/ujjwal-bhardwaj-b6b46a80', target='_blank')
+                            i.fa.fa-linkedin
+                        a(href='https://www.instagram.com/ujjwalbhardwaj96', target='_blank')
+                            i.fa.fa-instagram
+                        a(href='https://github.com/imujjwal96', target='_blank')
+                            i.fa.fa-github
     .container
         .col-md-10
             +blogpostList(posts, 2)

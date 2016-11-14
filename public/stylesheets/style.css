@@ -18,7 +18,55 @@ body {
   margin-top: 40px;
 }
 
+.resume {
+  background-color: #009ee3;
+  color: #ffffff;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #009ee3;
+  border-radius: 25px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  margin-right: 10px;
+}
 
+.resume:hover {
+  background-color: white;
+  color: #009ee3;;
+}
+
+.resume:active {
+  background-color: white;
+  color: #009ee3;;
+}
+
+.header-socials a {
+  display: inline-block;
+  margin-right: 5px;
+  background-color: #009ee3;
+  color: #ffffff;
+  /* padding: 20px; */
+  font-size: 20px;
+  line-height: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  border:1px solid #009ee3;
+}
+.header-socials a:hover {
+  background-color: #ffffff;
+  color:#009ee3;
+}
+
+.header-socials a:active {
+  background-color: #ffffff;
+  color:#009ee3;
+}
 
 h1,
 h2,
@@ -31,6 +79,12 @@ h6 {
   font-style: normal;
   font-family: "Raleway", Sans-serif;
   color: #4A4A4A;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: left;
+  text-decoration: underline;
 }
 p {
   font-family: 'Raleway', sans-serif;
@@ -83,7 +137,7 @@ section:last-child {
     color:#fff;
   }
   header {
-    margin: 130px 0 65px;
+    margin: 20px 0 65px;
     text-align: center;
   }
   /*- BX Slaider reset -*/
@@ -228,8 +282,8 @@ section:last-child {
     transition: all 0.2s ease-out;
   }
   .blog-post .read-more a:hover {
-    background-color: #060B2A;
-    border-color: #060B2A;
+    background-color: #009ee3;
+    border-color: #009ee3;
     color: #fff;
   }
   .blog-post .blog-post-text {
@@ -396,3 +450,4 @@ section:last-child {
   footer .footer-bottom {
     padding: 10px 0 40px;
   }
+
