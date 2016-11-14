@@ -7,7 +7,8 @@ module.exports.getPosts = function (limit) {
     var deferred = Q.defer();
     cf.api.getEntries({
         'content_type': cf.const.POST_CT,
-        'limit': limit
+        'limit': limit,
+        'order': '-sys.createdAt'
     }).then(function (response) {
         var posts = [];
         if (response.total > 0) {
