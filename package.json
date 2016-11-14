@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "author": "ujjwalbhardwaj",
   "dependencies": {
     "body-parser": "~1.15.2",
     "contentful": "^3.3.14",
