@@ -113,7 +113,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 ::selection {
   text-shadow: none;
-  background: #060B2A;
+  background: rgba(0,158,227,.2);
 }
 section {
   padding-bottom: 60px;
@@ -298,6 +298,10 @@ section:last-child {
     border-color: #009ee3;
     color: #fff;
   }
+  .read-more {
+    text-align: center;
+  }
+
   .blog-post .blog-post-text {
     text-align: left;
   }

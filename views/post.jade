@@ -6,7 +6,7 @@ block content
     section
       .row
         .col-md-10
-          +blogpost(title, date, author, categories)
+          +blogpost(title, date, author, categories, level, postSlug, read)
             if featuredImage
               div.featured
                 img(src=featuredImage.file.url, title=featuredImage.title)
