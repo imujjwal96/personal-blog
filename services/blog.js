@@ -106,6 +106,7 @@ module.exports.formatPost_ = function (post) {
         title: post.fields.title,
         featuredImage: post.fields.featuredImage ? post.fields.featuredImage.fields : null,
         body: md(post.fields.body),
+        slug: post.fields.slug,
         date: dateFormat(post.fields.date, 'fullDate'),
         categories: post.fields.category,
         author: {
