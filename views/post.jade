@@ -11,3 +11,4 @@ block content
               div.featured
                 img(src=featuredImage.file.url, title=featuredImage.title)
             section!= body
+            .fb-comments(data-href='http://ujjwalbhardwaj.herokuapp.com/post/' + postSlug, data-width='100%', data-numposts='5')
