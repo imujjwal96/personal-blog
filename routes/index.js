@@ -18,4 +18,8 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/resume', function (req, res, next) {
+    res.render('resume');
+});
+
 module.exports = router;
