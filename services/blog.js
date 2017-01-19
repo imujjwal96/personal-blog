@@ -81,7 +81,7 @@ module.exports.getCategoryWithPosts = function (id) {
 
 module.exports.formatPosts_ = function (posts) {
     var result = [];
-    console.log(require('util').inspect(posts, { depth: null }));
+    require('util').inspect(posts, { depth: null });
     for (var i = 0; i < posts.length; i++) {
         var post = posts[i];
         result.push({
