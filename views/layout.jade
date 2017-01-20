@@ -3,14 +3,32 @@ include ./mixins.jade
 doctype html
 html
   head
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
     title
       if title
         | #{title} | Ujjwal Bhardwaj
       else
         | Ujjwal Bhardwaj
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
+
+    meta(property="og:site_name" content="Ujjwal Bhardwaj's Blog")
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="Ujjwal Bhardwaj's Blog")
+    meta(property="og:description" content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
+    meta(property="og:url" content="http://ujjwalbhardwaj.me/")
+    meta(property="og:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
+    meta(property="article:publisher" content="https://www.facebook.com/imujjwal96")
+
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:title" content="Ujjwal Bhardwaj's Blog")
+    meta(name="twitter:description" content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
+    meta(name="twitter:url" content="http://ujjwalbhardwaj.me")
+    meta(name="twitter:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
+    meta(name="twitter:site" content="@imujjwal96")
+
+    link(rel="author", href="https://plus.google.com/+UjjwalBhardwaj96")
     link(rel='shortcut icon', href='/images/favicon.png')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
@@ -18,37 +36,54 @@ html
     link(rel='stylesheet', href='/stylesheets/jquery.bxslider.css')
     link(rel='stylesheet', href='/stylesheets/form.css')
 
-  body
-    #fb-root
-    script.
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=353865691635127";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    if title
-      include includes/header
-    block content
-    include includes/footer
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
-    script(src='/javascripts/jquery.bxslider.js')
-    script(src='/javascripts/custom.js')
-    script(src='/javascripts/form.js')
-    script.
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-                  (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-87329450-1', 'auto');
-      ga('send', 'pageview');
+    script(type='application/ld+json').
+      {
+      "@context": "https://schema.org",
+      "@type": "Website",
+      "publisher": {
+      "@type": "Organization",
+      "name": "Ujjwal Bhardwaj&#x27;s Blog",
+      "logo": "http://ujjwalbhardwaj.me/images/favicon.png"
+      },
+      "url": "http://ujjwalbhardwaj.me/",
+      "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://ujjwalbhardwaj.me"
+      },
+      "description": "I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects."
+      }
+
+    body
+      #fb-root
+      script.
+          (function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=353865691635127";
+              fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+      if title
+        include includes/header
+      block content
+      include includes/footer
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+      script(src='/javascripts/jquery.bxslider.js')
+      script(src='/javascripts/custom.js')
+      script(src='/javascripts/form.js')
+      script.
+        (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                  }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+                  m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-87329450-1', 'auto');
+        ga('send', 'pageview');
