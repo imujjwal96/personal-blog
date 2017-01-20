@@ -3,9 +3,9 @@ html
     head
         title Resume | Ujjwal Bhardwaj
         meta(name='viewport', content='width=device-width')
-        meta(name='description', content='The Curriculum Vitae of Joe Bloggs.')
+        meta(name='description', content='The Curriculum Vitae of Ujjwal Bhardwaj.')
         meta(charset='UTF-8')
-        link(type='text/css', rel='stylesheet', href='/stylesheets/resume.css')
+        link(type='text/css', rel='stylesheet', href='/stylesheets/resume.min.css')
         link(type='text/css', rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
         //if lt IE 9
           script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
@@ -113,10 +113,17 @@ html
                 div(id="save")
                     a(href="/ujjwalbhardwaj-resume30102016.pdf", download, style='color:#ffffff')
                         | SAVE AS PDF
-        script(type='text/javascript').
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        script(type='text/javascript').
-            var pageTracker = _gat._getTracker("UA-3753241-1");
-            pageTracker._initData();
-            pageTracker._trackPageview();
+        script.
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-87329450-1', 'auto');
+            ga('send', 'pageview');
