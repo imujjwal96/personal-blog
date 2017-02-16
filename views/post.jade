@@ -1,14 +1,15 @@
 extends layout
 
 block content
-  .container
-    header
-    section
-      .row
-        .col-md-10
-          +blogpost(title, date, author, categories, level, postSlug, read)
-            if featuredImage
-              div.featured
-                img(src=featuredImage.file.url, title=featuredImage.title)
-            section!= body
-            .fb-comments(data-href='http://ujjwalbhardwaj.me/post/' + slug, data-width='100%', data-numposts='5')
+  .container-fluid
+    include includes/leftside
+    .col-md-8.right-side
+      article.blog-post
+        +blogpost(title, date, author, categories, level, postSlug, read)
+          if featuredImage
+            div.featured
+              img(src=featuredImage.file.url, title=featuredImage.title)
+          section!= body
+          .fb-comments(data-href='http://ujjwalbhardwaj.me/post/' + slug, data-width='100%', data-numposts='5')
+      footer
+        | © 2017 | Ujjwal Bhardwaj. All Rights Reserved.

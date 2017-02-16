@@ -2,28 +2,21 @@ extends layout
 
 block content
     .container-fluid
-        header
-            a(href='/')
-                img(src='/images/logo2.png', alt='Ujjwal Bhardwaj', title='Ujjwal Bhardwaj', id='headerlogo')
-            .container
-                .row
-                    .col-md-6.col-md-offset-3
-                        |   Student | Open Source Developer
-                    .col-md-6.col-md-offset-3(style='margin-top:10px')
-                        a(href='/post/about-me', class='resume', target='_blank') About Me
-                        a(href='/resume', class='resume', target='_blank') Resume
-                    .col-md-6.col-md-offset-3.header-socials(style='margin-top:10px')
-                        a(href='mail:ujjwalb1996@gmail.com', target='_blank')
-                            i.fa.fa-envelope
-                        a(href='https://www.facebook.com/imujjwal96', target='_blank')
-                            i.fa.fa-facebook
-                        a(href='https://in.linkedin.com/in/ujjwal-bhardwaj-b6b46a80', target='_blank')
-                            i.fa.fa-linkedin
-                        a(href='https://www.instagram.com/ujjwalbhardwaj96', target='_blank')
-                            i.fa.fa-instagram
-                        a(href='https://github.com/imujjwal96', target='_blank')
-                            i.fa.fa-github
-    .container
-        .col-md-10
+        include includes/leftside
+        .col-md-8.right-side
             +blogpostList(posts, 2)
+            //nav(aria-label='Page navigation example')
+                ul.pagination
+                    li.page-item.disabled
+                        a.page-link(href='#') Previous
+                    li.page-item.active
+                        a.page-link(href='#') 1
+                    li.page-item
+                        a.page-link(href='#') 2
+                    li.page-item
+                        a.page-link(href='#') 3
+                    li.page-item
+                        a.page-link(href='#') Next
+            footer
+                | © 2017 | Ujjwal Bhardwaj. All Rights Reserved.
 

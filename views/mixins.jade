@@ -2,24 +2,18 @@ mixin blogpostList(posts, level)
   each post in posts
     +blogpost(post.title, post.date, post.author, post.categories, level, post.slug, post.read)
       p!= post.plot
-      .read-more
+      .blog-footer
         a(href='post/' + post.slug) Read more
 
 mixin blogpost(title, date, author, postCategories, level, postSlug, postRead)
   article.blog-post
-    .blog-post-body
+    .blog-title
       if level == 2
         h2
           a(href='post/' + postSlug) #{title}
       else
         h2(style='color: #009ee3') #{title}
-      .post-meta
-        span
-          i.fa.fa-clock-o
-          | #{date}
-        | |
-        span
-          | #{postRead} minute read
+    .blog-body
       if block
         block
-
+  hr

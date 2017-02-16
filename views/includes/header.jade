@@ -1,5 +1,17 @@
-nav.navbar.navbar-inverse
-    .container
-        .navbar-header
-            a(class='navbar-brand', href='/')
-                img(class='img-responsive', src='/images/logo.png', title='Ujjwal Bhardwaj', alt='Ujjwal Bhardwaj', width='300px')
+nav.navbar.navbar-toggleable-md.navbar-dark.bg-inverse.hidden-md-up
+    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarNavDropdown', aria-controls='navbarNavDropdown', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    img#title.hidden-md-up(src='/images/logo.png', title='Ujjwal Bhardwaj')
+    #navbarNavDropdown.collapse.navbar-collapse
+        ul.navbar-nav
+            li.nav-item
+                a.nav-link(href='/') Home
+            li.nav-item.active
+                a.nav-link(href='/')
+                    | Blog
+                    span.sr-only (current)
+            li.nav-item
+                a.nav-link(href='/codepad/')
+                    | Codepad
+            li.nav-item
+                a.nav-link(href='/resume') Resume
