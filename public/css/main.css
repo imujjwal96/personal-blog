@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway');
 body {
     font-size: 16px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: #f5f5f5;
     overflow-x: hidden;
+}
+
+h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
 }
 
 html, body, .container-fluid {
@@ -132,7 +137,7 @@ html, body, .container-fluid {
     border: 1px solid #e6e6e6;
     border-radius: 10px;
     background-color: #F3F3F3;
-    font-family: "Open Sans", Sans-serif;
+    font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;

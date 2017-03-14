@@ -5,7 +5,7 @@ var router = express.Router();
 
 // Fetch first 5 blog posts
 router.use(function(req, res, next) {
-  blog.getPosts(5).then(function(posts) {
+  blog.getPosts(10).then(function(posts) {
     req.posts = posts;
     next();
   })
@@ -13,9 +13,9 @@ router.use(function(req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {
-    'posts': req.posts
-  });
+    res.render('index', {
+        'posts': req.posts
+    });
 });
 
 router.get('/resume', function (req, res, next) {

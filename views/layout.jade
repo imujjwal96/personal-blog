@@ -11,22 +11,43 @@ html
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    meta(name="description", content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
+    if body == null
+      meta(name="description", content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
+    else
+      meta(name="description", content=body.substr(0, 250))
 
     meta(name="google-site-verification", content="6d_WpKSAG-KVXsYs3K9-PoPRZ_r5o8QfsoC8aeDapaI")
 
     meta(property="og:site_name" content="Ujjwal Bhardwaj's Blog")
     meta(property="og:type" content="website")
-    meta(property="og:title" content="Ujjwal Bhardwaj's Blog")
-    meta(property="og:description" content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
-    meta(property="og:url" content="http://ujjwalbhardwaj.me/")
+    if title == null
+      meta(property="og:title" content="Ujjwal Bhardwaj's Blog")
+    else
+      meta(property="og:title" content=title)
+    if body == null
+      meta(property="og:description" content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
+    else
+      meta(property="og:description" content=body.substr(0, 250))
+    if slug == null
+      meta(property="og:url" content="http://ujjwalbhardwaj.me/")
+    else
+      meta(property="og:url" content="http://ujjwalbhardwaj.me/post/" + slug)
     meta(property="og:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
     meta(property="article:publisher" content="https://www.facebook.com/imujjwal96")
 
     meta(name="twitter:card" content="summary_large_image")
-    meta(name="twitter:title" content="Ujjwal Bhardwaj's Blog")
-    meta(name="twitter:description" content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
-    meta(name="twitter:url" content="http://ujjwalbhardwaj.me")
+    if title == null
+      meta(property="twitter:title" content="Ujjwal Bhardwaj's Blog")
+    else
+      meta(property="twitter:title" content=title)
+    if body == null
+      meta(property="twitter:description" content="I am working as a freelance web developer alongside my studies. I have created and am contributing to open source projects.")
+    else
+      meta(property="twitter:description" content=body.substr(0, 250))
+    if slug == null
+      meta(property="twitter:url" content="http://ujjwalbhardwaj.me/")
+    else
+      meta(property="twitter:url" content="http://ujjwalbhardwaj.me/post/" + slug)
     meta(name="twitter:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
     meta(name="twitter:site" content="@imujjwal96")
 
