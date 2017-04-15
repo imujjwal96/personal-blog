@@ -13,6 +13,7 @@ mixin blogpost(title, date, author, postCategories, level, postSlug, postRead)
           a(href='post/' + postSlug) #{title}
       else
         h2(style='color: #009ee3') #{title}
+    .dati #{date}
     .blog-body
       if block
         block

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway');
+ @import url('https://fonts.googleapis.com/css?family=Merriweather');
 body {
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
@@ -35,6 +36,10 @@ html, body, .container-fluid {
     .right-side {
         margin-left: 0;
     }
+}
+
+.dati {
+    font-family: 'Merriweather', serif;
 }
 
 #logo {
