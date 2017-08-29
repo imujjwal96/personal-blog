@@ -32,7 +32,10 @@ html
       meta(property="og:url" content="http://ujjwalbhardwaj.me/")
     else
       meta(property="og:url" content="http://ujjwalbhardwaj.me/post/" + slug)
-    meta(property="og:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
+    if title == null
+      meta(property="og:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
+    else
+      meta(property="og:image" content="http://bantar.tk/952/498/0cd/?txt=#{title}&fontSize=36")
     meta(property="article:publisher" content="https://www.facebook.com/imujjwal96")
 
     meta(name="twitter:card" content="summary_large_image")
@@ -48,7 +51,10 @@ html
       meta(property="twitter:url" content="http://ujjwalbhardwaj.me/")
     else
       meta(property="twitter:url" content="http://ujjwalbhardwaj.me/post/" + slug)
-    meta(name="twitter:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
+    if title == null
+      meta(name="twitter:image" content="http://ujjwalbhardwaj.me/images/logo2.png")
+    else
+      meta(name="twitter:image" content="http://bantar.tk/900/471/0cd/?txt=#{title}&fontSize=36")
     meta(name="twitter:site" content="@imujjwal96")
 
     link(rel='author', href='https://plus.google.com/+UjjwalBhardwaj96')
