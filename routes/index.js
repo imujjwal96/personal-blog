@@ -3,9 +3,9 @@ var blog = require('../services/blog');
 var router = express.Router();
 
 
-// Fetch first 5 blog posts
+// Fetch first 100 blog posts
 router.use(function(req, res, next) {
-  blog.getPosts(10).then(function(posts) {
+  blog.getPosts(100).then(function(posts) {
     req.posts = posts;
     next();
   })
