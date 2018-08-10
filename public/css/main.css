@@ -47,6 +47,11 @@ html, body, .container-fluid {
     margin: 0 auto;
 }
 
+.logoAWS {
+    width: 75%;
+    margin: 0 auto;
+}
+
 #tagline {
     text-align: center;
     margin-top: -20px;
