@@ -3,12 +3,13 @@ var dateFormat = require('dateformat');
 var md = require('marked');
 var Q = require('q');
 
-module.exports.getPosts = function (limit) {
+module.exports.getPosts = function (limit, page) {
     var deferred = Q.defer();
     cf.api.getEntries({
         'content_type': cf.const.POST_CT,
         'limit': limit,
-        'order': '-sys.createdAt'
+        'order': '-sys.createdAt',
+        'skip': (page-1) * 10
     }).then(function (response) {
         var posts = [];
         if (response.total > 0) {
@@ -22,6 +23,22 @@ module.exports.getPosts = function (limit) {
 
     return deferred.promise;
 };
+
+module.exports.getPostsNumber = function () {
+    var deferred = Q.defer();
+    cf.api.getEntries({
+        'content_type': cf.const.POST_CT,
+        'order': '-sys.createdAt'
+    }).then(function (response) {
+        deferred.resolve(response.total);
+    }.bind(this), function(errorMsg) {
+        console.error(errorMsg);
+        deferred.reject(errorMsg);
+    }.bind(this));
+
+    return deferred.promise;
+};
+
 
 module.exports.getPostBySlug = function (slug) {
     var deferred = Q.defer();
