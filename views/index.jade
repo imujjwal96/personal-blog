@@ -1,22 +1,35 @@
 extends layout
 
 block content
+    - var totalPages=Math.ceil(number / 10);
+    - page = parseInt(page)
     .container-fluid
         include includes/leftside
         .col-md-8.right-side
             +blogpostList(posts, 2)
-            //nav(aria-label='Page navigation example')
-                ul.pagination
-                    li.page-item.disabled
-                        a.page-link(href='#') Previous
-                    li.page-item.active
-                        a.page-link(href='#') 1
-                    li.page-item
-                        a.page-link(href='#') 2
-                    li.page-item
-                        a.page-link(href='#') 3
-                    li.page-item
-                        a.page-link(href='#') Next
+            if page <= totalPages
+                nav(aria-label='Page navigation example')
+                    - var n = 1;
+                    ul.pagination
+                        if page === 1
+                            li.page-item.disabled
+                                a.page-link(href='/?page=#{parseInt(page)-1}') Previous
+                        else
+                            li.page-item
+                                a.page-link(href='/?page=#{parseInt(page)-1}') Previous
+                        while n <= totalPages
+                            if n === page
+                                li.page-item.active
+                                    a.page-link(href='/?page=#{n}')=n++
+                            else
+                                li.page-item
+                                    a.page-link(href='/?page=#{n}')=n++
+                        if page === totalPages
+                            li.page-item.disabled
+                                a.page-link(href='/?page=#{parseInt(page)+1}') Next
+                        else
+                            li.page-item
+                                a.page-link(href='/?page=#{parseInt(page)+1}') Next
             footer
-                | © 2018 | Ujjwal Bhardwaj. All Rights Reserved.
+                | © 2019 | Ujjwal Bhardwaj. All Rights Reserved.
 

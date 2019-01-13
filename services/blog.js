@@ -24,6 +24,22 @@ module.exports.getPosts = function (limit, page) {
     return deferred.promise;
 };
 
+module.exports.getPostsNumber = function () {
+    var deferred = Q.defer();
+    cf.api.getEntries({
+        'content_type': cf.const.POST_CT,
+        'order': '-sys.createdAt'
+    }).then(function (response) {
+        deferred.resolve(response.total);
+    }.bind(this), function(errorMsg) {
+        console.error(errorMsg);
+        deferred.reject(errorMsg);
+    }.bind(this));
+
+    return deferred.promise;
+};
+
+
 module.exports.getPostBySlug = function (slug) {
     var deferred = Q.defer();
     cf.api.getEntries({

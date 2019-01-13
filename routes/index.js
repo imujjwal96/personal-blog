@@ -2,29 +2,35 @@ var express = require('express');
 var blog = require('../services/blog');
 var router = express.Router();
 
-
-// Fetch first 100 blog posts
 router.use(function(req, res, next) {
-  var page = req.query.page;
-  if (page === undefined) {
-    page = 1;
+  req.page = req.query.page;
+  if (req.page === undefined) {
+      req.page = 1;
   }
 
-  blog.getPosts(10, page).then(function(posts) {
-    req.posts = posts;
-    next();
+  blog.getPostsNumber().then(function (number) {
+      req.number = number;
+      return number;
+  }).then(function () {
+      blog.getPosts(10, req.page).then(function(posts) {
+          req.posts = posts;
+          next();
+      });
   })
+
 });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', {
-        'posts': req.posts
-    });
+  res.render('index', {
+    'posts': req.posts,
+    'page': req.page,
+    'number': req.number
+  });
 });
 
 router.get('/resume', function (req, res, next) {
-    res.render('resume');
+  res.render('resume');
 });
 
 module.exports = router;
