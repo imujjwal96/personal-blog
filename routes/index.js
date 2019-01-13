@@ -5,7 +5,12 @@ var router = express.Router();
 
 // Fetch first 100 blog posts
 router.use(function(req, res, next) {
-  blog.getPosts(100).then(function(posts) {
+  var page = req.query.page;
+  if (page === undefined) {
+    page = 1;
+  }
+
+  blog.getPosts(10, page).then(function(posts) {
     req.posts = posts;
     next();
   })

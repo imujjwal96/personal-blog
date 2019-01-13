@@ -3,12 +3,13 @@ var dateFormat = require('dateformat');
 var md = require('marked');
 var Q = require('q');
 
-module.exports.getPosts = function (limit) {
+module.exports.getPosts = function (limit, page) {
     var deferred = Q.defer();
     cf.api.getEntries({
         'content_type': cf.const.POST_CT,
         'limit': limit,
-        'order': '-sys.createdAt'
+        'order': '-sys.createdAt',
+        'skip': (page-1) * 10
     }).then(function (response) {
         var posts = [];
         if (response.total > 0) {
