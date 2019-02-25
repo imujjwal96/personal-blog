@@ -32,9 +32,11 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/*
 router.get('/resume', function (req, res, next) {
   res.render('resume');
 });
+*/
 
 router.post('/backdoor', function (req,res, next) {
   let hmac = crypto.createHmac('sha1', 'hello');
