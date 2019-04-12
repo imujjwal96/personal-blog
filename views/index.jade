@@ -30,6 +30,13 @@ block content
                         else
                             li.page-item
                                 a.page-link(href='/?page=#{parseInt(page)+1}') Next
-            footer
+            footer.hidden-md-down
                 | © 2019 | Ujjwal Bhardwaj. All Rights Reserved.
+            footer.bg-inverse.hidden-md-up.navbar-dark
+                .container.text-center
+                    .row
+                        img(src='/images/aws_batches.png', title='Ujjwal Bhardwaj', style="width: 70%")
+                        hr
+                        .footer-copyright(style="color: white;")
+                            | © 2019 | Ujjwal Bhardwaj. All Rights Reserved.
 

@@ -11,5 +11,12 @@ block content
               img(src=featuredImage.file.url, title=featuredImage.title)
           section!= body
           .fb-comments(data-href='http://ujjwalbhardwaj.me/post/' + slug, data-width='100%', data-numposts='5')
-      footer
+      footer.hidden-md-down
         | © 2019 | Ujjwal Bhardwaj. All Rights Reserved.
+      footer.bg-inverse.hidden-md-up.navbar-dark
+        .container.text-center
+          .row
+            img(src='/images/aws_batches.png', title='Ujjwal Bhardwaj', style="width: 70%")
+            hr
+            .footer-copyright(style="color: white;")
+              | © 2019 | Ujjwal Bhardwaj. All Rights Reserved.

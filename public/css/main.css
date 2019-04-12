@@ -167,9 +167,11 @@ html, body, .container-fluid {
 footer {
     border-top: 1px solid #373a3c;
     text-align: center;
-    margin-left: -15px;
-    margin-right: -25px;
-    padding-top: 10px;
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-top: 20px;
+    padding-bottom: inherit;
+    margin-bottom: -20px;
 }
 
 .back-to-top {
