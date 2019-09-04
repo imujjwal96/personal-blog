@@ -32,6 +32,14 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/posts', function(req, res, next) {
+    res.render('posts', {
+        'posts': req.posts,
+        'page': req.page,
+        'number': req.number
+    });
+});
+
 /*
 router.get('/resume', function (req, res, next) {
   res.render('resume');

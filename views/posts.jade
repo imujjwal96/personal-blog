@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    - var totalPages=Math.ceil(number / 10);
+    - page = parseInt(page)
+    .container-fluid
+        include includes/leftside
+        .col-md-8.right-side
+            +blogpostList(posts, 2)
+            if page <= totalPages
+                nav(aria-label='Page navigation example')
+                    - var n = 1;
+                    ul.pagination
+                        if page === 1
+                            li.page-item.disabled
+                                a.page-link(href='?page=#{parseInt(page)-1}') Previous
+                        else
+                            li.page-item
+                                a.page-link(href='?page=#{parseInt(page)-1}') Previous
+                        while n <= totalPages
+                            if n === page
+                                li.page-item.active
+                                    a.page-link(href='?page=#{n}')=n++
+                            else
+                                li.page-item
+                                    a.page-link(href='?page=#{n}')=n++
+                        if page === totalPages
+                            li.page-item.disabled
+                                a.page-link(href='?page=#{parseInt(page)+1}') Next
+                        else
+                            li.page-item
+                                a.page-link(href='?page=#{parseInt(page)+1}') Next
+            footer.hidden-md-down
+                | © 2019 | Ujjwal Bhardwaj. All Rights Reserved. (Source&nbsp;
+                a(href="https://github.com/imujjwal96/personal-blog" target="_blank") code
+                | )
+            footer.bg-inverse.hidden-md-up.navbar-dark
+                .container.text-center
+                    .row
+                        img(src='/images/aws_batches.png', title='Ujjwal Bhardwaj', style="width: 70%")
+                        hr
+                        .footer-copyright(style="color: white;")
+                            | © 2019 | Ujjwal Bhardwaj. All Rights Reserved. (Source&nbsp;
+                            a(href="https://github.com/imujjwal96/personal-blog" target="_blank") code
+                            | )
