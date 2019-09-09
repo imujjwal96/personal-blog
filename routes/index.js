@@ -26,9 +26,7 @@ router.use(function(req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
-    'posts': req.posts,
-    'page': req.page,
-    'number': req.number
+      'currentUrl': req.path,
   });
 });
 
@@ -36,15 +34,14 @@ router.get('/posts', function(req, res, next) {
     res.render('posts', {
         'posts': req.posts,
         'page': req.page,
-        'number': req.number
+        'number': req.number,
+        'currentUrl': req.path,
     });
 });
 
-/*
-router.get('/resume', function (req, res, next) {
-  res.render('resume');
-});
-*/
+// router.get('/resume', function (req, res, next) {
+//   res.render('resume');
+// });
 
 router.post('/backdoor', function (req,res, next) {
   let hmac = crypto.createHmac('sha1', 'hello');

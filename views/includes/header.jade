@@ -4,9 +4,21 @@ nav.navbar.navbar-toggleable-md.navbar-dark.bg-inverse.hidden-md-up
     img#title.hidden-md-up(src='/images/logo.png', title='Ujjwal Bhardwaj')
     #navbarNavDropdown.collapse.navbar-collapse
         ul.navbar-nav
+            - if(currentUrl === '/')
+                li.nav-item.active
+                    a.nav-link(href='/')
+                        | Home
+                        span.sr-only (current)
+            - else
+                li.nav-item
+                    a.nav-link(href='/') Home
+            - if(currentUrl === '/posts')
+                li.nav-item.active
+                    a.nav-link(href='/posts')
+                        | Blog
+                        span.sr-only (current)
+            - else
+                li.nav-item
+                    a.nav-link(href='/posts') Blog
             li.nav-item
-                a.nav-link(href='/') Home
-            li.nav-item.active
-                a.nav-link(href='/')
-                    | Blog
-                    span.sr-only (current)
+                a.nav-link(href='https://drive.google.com/open?id=17rtrOPVi6GbLsBE2KiO7woL2s5nHSx1D', target="_blank") Resume
