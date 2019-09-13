@@ -3,14 +3,14 @@ mixin blogpostList(posts, level)
     +blogpost(post.title, post.date, post.author, post.categories, level, post.slug, post.read)
       p!= post.plot
       .blog-footer
-        a(href='post/' + post.slug) Read more
+        a(href='/post/' + post.slug) Read more
 
 mixin blogpost(title, date, author, postCategories, level, postSlug, postRead)
   article.blog-post
     .blog-title
       if level == 2
         h2
-          a(href='post/' + postSlug) #{title}
+          a(href='/post/' + postSlug) #{title}
       else
         h2(style='color: #009ee3') #{title}
     .blog-post-meta(style="font-weight: bold") #{date} by #{author.name}
